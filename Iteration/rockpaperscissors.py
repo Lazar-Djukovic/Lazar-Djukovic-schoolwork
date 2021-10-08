@@ -1,31 +1,55 @@
 import random
+  
+player = input('rock (r), paper (p) or scissors (s)?')
 
-t = ["Rock", "Paper", "Scissors"]
+if player == 'r':
+  print('O', end=' ')
+  
+elif player == 'p':random
+print('___', end=' ')
+  
+elif player == 's':
+print('>8', end=' ')
+  
+else:
+print('??')
+  
+print('vs', end=' ')
 
-computer = random.randint("Rock", "Paper", "Scissors")
+chosen = random.randint(1,3)
 
-player = False
+if chosen == 1 :
+  computer = 'r'
+  print('O')
+  
+elif chosen == 2 :
+  computer = 'p'
+  print('___')
+  
+else:
+  computer = 's'
+  print('>8')
 
-while player == False:
-    player = input("Rock, Paper, Scissors?")
-    if player == computer:
-        print("Tie!")
-    elif player == "Rock":
-        if computer == "Paper":
-            print("You lose!", computer, "covers", player)
-        else:
-            print("You win!", player, "smashes", computer)
-    elif player == "Paper":
-        if computer == "Scissors":
-            print("You lose!", computer, "cut", player)
-        else:
-            print("You win!", player, "covers", computer)
-    elif player == "Scissors":
-        if computer == "Rock":
-            print("You lose...", computer, "smashes", player)
-        else:
-            print("You win!", player, "cut", computer)
-    else:
-        print("That's not a valid play. Check your spelling!")
-    player = False
-    computer = random.randint("Rock", "Paper", "Scissors")
+if player == computer:
+  print('DRAW!')
+  
+elif player == 'r' and computer == 's':
+  print('Player wins!')
+  
+elif player == 'r' and computer == 'p':
+  print('Computer wins!')
+  
+elif player == 'p' and computer == 'r':
+  print('Player wins!')
+  
+elif player == 'p' and computer == 's':
+  print('Computer wins!')
+
+elif player == 's' and computer == 'p':
+  print('Player wins!')
+  
+elif player == "s" and computer == 'r':
+  print('Computer wins!')
+
+else:
+  print('Huh?')
