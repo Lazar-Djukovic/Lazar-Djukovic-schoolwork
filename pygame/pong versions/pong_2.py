@@ -17,10 +17,13 @@ screen = pygame.display.set_mode(size)
 
 pygame.display.set_caption("My Window")
 # -- Exit game flag set to false
-x_direction = 1
-y_direction = 1
+x_direction = 2
+y_direction = 2
 x_val = 150
 y_val = 200
+
+xpad = 0
+ypad = 200
 
 ball_width = 20
 done = False
@@ -35,6 +38,22 @@ while not done:
   if event.type == pygame.QUIT:
    done = True
 #End If
+
+ keys = pygame.key.get_pressed() 
+  ## - the up key or down key has been pressed 
+ if keys[pygame.K_UP]: 
+  ypad = ypad - 6
+ if keys[pygame.K_DOWN]: 
+  ypad = ypad + 6
+ if ypad > 420:
+     ypad = 420
+ if ypad < 0:
+     ypad = 0
+    
+ # - write logic that happens on key press here
+#End If
+ #End If
+#Next event 
 
  #Next event
  # -- Game logic goes after this comment
@@ -55,7 +74,8 @@ while not done:
  screen.fill (BLACK)
  # -- Draw here
 
- pygame.draw.rect(screen, WHITE, (x_val,y_val,ball_width,ball_width))
+ pygame.draw.rect(screen, BLUE, (x_val,y_val,ball_width,ball_width))
+ pygame.draw.rect(screen, WHITE, (xpad,ypad,15,60))
 
  # -- flip display to reveal new position of objects
 
