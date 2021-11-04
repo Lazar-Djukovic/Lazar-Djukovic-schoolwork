@@ -24,13 +24,14 @@ pygame.display.set_caption("My Window")
 day = True
 rise = True
 cyp = 100
+cxp = 40
 yy = 465
 done = False
 counter = 0
 # -- Manages how fast screen refreshes
 
 clock = pygame.time.Clock() 
-cxp = 40
+
 ### -- Game Loop
 
 while not done:
@@ -75,9 +76,6 @@ while not done:
     rise = True
     counter = 0
     
-
-
- 
 
 
  # -- Draw here

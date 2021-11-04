@@ -34,9 +34,7 @@ done = False
 # -- Manages how fast screen refreshes
 clock = pygame.time.Clock() 
 
-font = pygame.font.SysFont(None, 15)
-text = font.render('life', True, WHITE, BLUE)
-textRect = (screen, BLACK, [55,500,10,5], 0)
+
 ### -- Game Loop
 
 while not done:
@@ -44,7 +42,6 @@ while not done:
  for event in pygame.event.get():
   if event.type == pygame.QUIT:
    done = True
- screen.blit(text, textRect)
 #End If
  keys = pygame.key.get_pressed() 
   ## - the up key or down key has been pressed 
