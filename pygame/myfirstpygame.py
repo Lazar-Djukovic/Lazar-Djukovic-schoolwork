@@ -81,7 +81,8 @@ while not done:
  # -- Draw here
 
  pygame.draw.rect(screen, BRICK, (220,165,200,150))
- pygame.draw.circle(screen, YELLOW, (cxp,cyp),40,0)
+ ### SRC - I had to force cxp and cyp to be integers here, did you have a problem?
+ pygame.draw.circle(screen, YELLOW, (int(cxp),int(cyp)),40,0)
  for yy in range (165,320,13):
     pygame.draw.line(screen, GRAY, (220,yy),(420,yy),2)
  for xx in range (220,420,33):
