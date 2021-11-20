@@ -11,10 +11,13 @@ RED = (255, 0, 0)
 class Snow:
     def __init__(self):
         self.colour = WHITE
-        self.height = 10
-        self.width = 10
+        self.size= []
         self.listx = []
         self.listy = []
+        for i in range(0,150):
+            x = random.randrange(10,20,5)
+            self.size.append(x)
+            
         for i in range(0,110):
              x = random.randrange(0, 700)
              y = random.randrange(-70, 400)
@@ -28,7 +31,7 @@ class Snow:
     def update(self):
 
         for i in range(len(self.listx)):
-            pygame.draw.rect(screen, self.colour, (self.listx[i],self.listy[i],self.height,self.width))
+            pygame.draw.rect(screen, self.colour, (self.listx[i],self.listy[i],self.size[i],self.size[i]))
             self.listy[i] += 1
             if self.listy[i] > 500:
                 self.listy[i] = -10
