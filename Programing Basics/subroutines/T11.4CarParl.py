@@ -18,10 +18,10 @@ def carpark2(x,y,z):
 
 def carpark3(regnum):
     global car_park
-    for row in range(20):
-        for col in range(6):
+    for row in car_park:
+        for col in car_park:
             if col == regnum:
-                col = 'empty'
+                car_park[row][col] = 'empty'
 
 
 

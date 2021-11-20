@@ -6,31 +6,35 @@ WHITE = (255, 255, 255)
 GREEN = (0, 255, 0)
 RED = (255, 0, 0)
 
-fs = 10
  
-snowx1 = 0
-snowy1 = 0
-
 
 class Snow:
     def __init__(self):
-        self.x = 100
-        self.y = 0
         self.colour = WHITE
         self.height = 10
         self.width = 10
-        
+        self.listx = []
+        self.listy = []
+        for i in range(0,110):
+             x = random.randrange(0, 700)
+             y = random.randrange(-70, 400)
+             self.listx.append(x)
+             self.listy.append(y)
+
     #end procedure 
 #end class
-    def draw(self):
-        pygame.draw.rect(screen,self.colour, [self.x,self.y,self.height,self.width])
-    
+        
+
     def update(self):
-        if self.y > 500:
-            self.x = random.randint(0,700)
-            self.y = 0
-        else 
-        self.1.y = self.1.y +1
+
+        for i in range(len(self.listx)):
+            pygame.draw.rect(screen, self.colour, (self.listx[i],self.listy[i],self.height,self.width))
+            self.listy[i] += 1
+            if self.listy[i] > 500:
+                self.listy[i] = -10
+                x = random.randrange(0, 700)
+                self.listx[i] = x
+
 
         
 
@@ -46,8 +50,7 @@ pygame.display.set_caption("My Game")
 done = False
  
 snow1 = Snow()
-print(snow1.x)
-print(snow1.y)
+
 # Used to manage how fast the screen updates
 clock = pygame.time.Clock()
  
@@ -59,22 +62,15 @@ while not done:
             done = True
  
     # --- Game logic should go here
-    snow1.y = snow1.y + 3
-
-    if snow1.y > 500:
-        snow1.y = 0
-        snow1.x = random.randint(0,700)
-    # --- Screen-clearing code goes here
- 
-    # Here, we clear the screen to white. Don't put other drawing commands
-    # above this, or they will be erased with this command.
  
     # If you want a background image, replace this clear with blit'ing the
     # background image.
     screen.fill(BLACK)
  
     # --- Drawing code should go here
-    snow1.draw()
+    
+    snow1.update()
+    
     # --- Go ahead and update the screen with what we've drawn.
     pygame.display.flip()
  
