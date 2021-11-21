@@ -32,6 +32,9 @@ pwid = 15
 plen = 60
 bwid = 20
 done = False
+sysfont = pygame.font.get_default_font()
+
+
 # -- Manages how fast screen refreshes
 clock = pygame.time.Clock() 
 
@@ -44,6 +47,8 @@ while not done:
   if event.type == pygame.QUIT:
    done = True
 #End If
+ 
+
  keys = pygame.key.get_pressed() 
   ## - the up key or down key has been pressed 
  if keys[pygame.K_UP]: 
@@ -69,6 +74,7 @@ while not done:
  # -- Game logic goes after this comment
  x_val = x_val + x_direction
  y_val = y_val + y_direction
+
  
  if y_val == 460:
      y_direction = y_direction * -1
@@ -79,6 +85,9 @@ while not done:
  if x_val == 0:
      out = True
      life = life - 1
+     x_direction += 5
+     y_direction += 5
+
  if out == True:
   x_direction = 0
   y_direction = 0
@@ -96,6 +105,10 @@ while not done:
      done = True
  # -- Screen background is BLACK
  screen.fill (BLACK)
+
+ font2 = pygame.font.SysFont('didot.ttc', 64)
+ img2 = font2.render(str(life), True, YELLOW)
+ screen.blit(img2, (20, 20))
  # -- Draw here
 
  pygame.draw.rect(screen, BLUE, (x_val,y_val,bwid,bwid))
