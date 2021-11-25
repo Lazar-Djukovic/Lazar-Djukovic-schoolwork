@@ -15,12 +15,12 @@ class Snow:
         self.listx = []
         self.listy = []
         for i in range(0,150):
-            x = random.randrange(10,20,5)
+            x = random.randrange(5,15,5)
             self.size.append(x)
             
-        for i in range(0,110):
+        for i in range(0,100):
              x = random.randrange(0, 700)
-             y = random.randrange(-70, 400)
+             y = random.randrange(-90, 400)
              self.listx.append(x)
              self.listy.append(y)
 
