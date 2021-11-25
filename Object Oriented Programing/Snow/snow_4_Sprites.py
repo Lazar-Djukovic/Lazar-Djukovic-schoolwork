@@ -8,21 +8,24 @@ WHITE = (255, 255, 255)
 GREEN = (0, 255, 0)
 RED = (255, 0, 0)
  
-class House:
-  age = 40
-  def __init__(self):
-    self.y = 440
-    self.x = 100
-    self.colour = RED
-    self.height = 100
-    self.width = 200
-  #end procedure
+## -- Define the class house which is a sprite 
+class House(pygame.sprite.Sprite): 
+# Define the constructor for house 
+  def __init__(self, color, width, height, posx, posy): 
+  # Call the sprite constructor 
+    super().__init__() 
+    # Create a sprite and fill it with colour 
+    self.image = pygame.Surface([width,height]) 
+    self.image.fill(color) 
+    # Set the position of the sprite 
+    self.rect = self.image.get_rect() 
+    self.rect.x = posx
+    self.rect.y = posy
+  #End Procedure
+  
   def update(self):
     pass
-  def draw(self):
-      pygame.draw.rect(screen, self.colour, [self.x,self.y,self.height,self.width])
-  #end procdure
-#end class
+#End Class
 
 ## -- Define the class snow which is a sprite 
 class Snow(pygame.sprite.Sprite): 
@@ -65,6 +68,11 @@ snow_group = pygame.sprite.Group()
 # Create a list of all sprites 
 all_sprites_group = pygame.sprite.Group() 
 
+#add the house to the group of sprites
+redhouse = House(RED, 100, 50, 50, 450)
+greenhouse = House(GREEN, 100, 50, 400, 450)
+all_sprites_group.add(redhouse)
+all_sprites_group.add(greenhouse)
 # Create the snowflakes 
 number_of_flakes = 50 # we are creating 50 snowflakes
 for x in range (number_of_flakes): 
