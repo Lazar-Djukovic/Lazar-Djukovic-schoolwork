@@ -1,3 +1,4 @@
+### SRC - Good work, but remember to close blocks of code with a comment.
 import pygame
 import random
 # Define some colors
@@ -17,13 +18,13 @@ class Snow:
         for i in range(0,150):
             x = random.randrange(5,15,5)
             self.size.append(x)
-            
+        #next i  - Please use comments like this to end blocks of code
         for i in range(0,100):
              x = random.randrange(0, 700)
              y = random.randrange(-90, 400)
              self.listx.append(x)
              self.listy.append(y)
-
+        #next i  - Please use comments like this to end blocks of code
     #end procedure 
 #end class
         
@@ -37,7 +38,7 @@ class Snow:
                 self.listy[i] = -10
                 x = random.randrange(0, 700)
                 self.listx[i] = x
-
+            #end if  - Please use comments like this to end blocks of code
 
         
 
