@@ -15,18 +15,18 @@ sysfont = pygame.font.get_default_font()
 print('system font :', sysfont)
 
 t0 = time.time()
-font = pygame.font.SysFont(None, 48)
+font = pygame.font.SysFont(None, 36)
 print('time needed for Font creation :', time.time()-t0)
 
-img = font.render(sysfont, True, RED)
+img = font.render('very dissaponted biden (why does this have a outline??)', True, RED)
 rect = img.get_rect()
 pygame.draw.rect(img, BLUE, rect, 1)
 
 font1 = pygame.font.SysFont('freesans.tff', 45)
-img1 = font1.render('chalkduster.ttf', True, BLUE)
+img1 = font1.render('Pygame yeah', True, BLUE)
 
-font2 = pygame.font.SysFont('didot.ttc', 72)
-img2 = font2.render('didot.ttc', True, GREEN)
+font2 = pygame.font.SysFont('didot.ttc', 50)
+img2 = font2.render('VERY GOOD COMPUTER SCIENCE', True, GREEN)
 
 fonts = pygame.font.get_fonts()
 print(len(fonts))

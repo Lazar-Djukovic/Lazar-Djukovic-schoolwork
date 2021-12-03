@@ -32,7 +32,7 @@ pwid = 15
 plen = 60
 bwid = 20
 done = False
-sysfont = pygame.font.get_default_font()
+#sysfont = pygame.font.get_default_font()
 
 
 # -- Manages how fast screen refreshes
