@@ -24,7 +24,7 @@ def getpword(attempt):
 done = False
 while done == False:
  print('Enter password:')
- pword = input(' ')
+ pword = str(input(' '))
  doneif = getpword(pword)
  if doneif == 1:
      done = True
