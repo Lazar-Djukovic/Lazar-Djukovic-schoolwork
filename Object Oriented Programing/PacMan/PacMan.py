@@ -159,9 +159,9 @@ while not done:
 
  # -- Check for collisions between pacman and wall tiles 
  player_hit_list = pygame.sprite.spritecollide(theplayer, wall_list, False)
- print (theplayer.rect.x) 
- for foo in player_hit_list: 
-   theplayer.set_speed(0, 0) 
+
+ for wall in player_hit_list: 
+  theplayer.player_set_speed(0, 0)
  
  # Run the update function for all sprites 
  all_sprites_list.update()

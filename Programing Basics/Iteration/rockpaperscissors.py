@@ -9,7 +9,6 @@ turn = False
 game = True
 check = False
 
-computer = r[random.randint(1,3)]
 
 print('================================================')
 print(' Welcome to rock paper scissors, please select:')
@@ -27,6 +26,8 @@ while turn == False:
       check = True
     else:
       print('Invalid choice')
+
+  computer = r[random.randint(1,3)]
 
   player = r[int(playerc)]
 
