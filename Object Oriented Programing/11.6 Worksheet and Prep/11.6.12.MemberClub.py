@@ -1,9 +1,9 @@
 class Member():
 
   def __init__(self,mySurname,MyFirstName,myAnnualFee):
-		surname = mySurname  
-		firstname = MyFirstName
-		annualFee = myAnnualFee
+    self.surname = mySurname  
+    self.firstname = MyFirstName
+    self.annualFee = myAnnualFee
 	#endprocedure
 
 
@@ -13,9 +13,9 @@ class Member():
 class JuniorMember(Member):
 
   def __init__(mySurname,MyFirstName,myAnnualFee,MyDateOfBirth):
-    dob = MyDateOfBirth
+    super.dob = MyDateOfBirth
     super.surname = mySurname  
-		super.firstname = MyFirstName
-		super.annualFee = myAnnualFee
+    super.firstname = MyFirstName
+    super.annualFee = myAnnualFee
 
 HarryMason = JuniorMember('Mason','Harry',25,'12.12.2004.')
