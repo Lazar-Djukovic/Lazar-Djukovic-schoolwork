@@ -136,7 +136,7 @@ for i in range (20,600,40):
   invader_group.add (myinvader) # adds the new invader to the group of inavders
   all_sprites_group.add (myinvader) # adds it to the group of all Sprites
 
-#Next x
+#Next i
 theplayer = Player(RED, 30, 30)
 all_sprites_group.add (theplayer)
 
