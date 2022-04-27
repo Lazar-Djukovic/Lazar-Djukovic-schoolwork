@@ -1,4 +1,5 @@
 NameList = []
+done = False
 
 def displaymenu():
   print(' ')
@@ -27,8 +28,11 @@ def DisplayList():
   print(NameList)
 
 
-choice = displaymenu()
-if choice == 1:
-  AddName()
-elif choice == 2:
-  DisplayList()
+while not done:
+  choice = displaymenu()
+  if choice == 1:
+    AddName()
+  elif choice == 2:
+    DisplayList()
+  elif choice == 3:
+    quit()
