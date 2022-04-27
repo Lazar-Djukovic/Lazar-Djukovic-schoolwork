@@ -1,3 +1,5 @@
+NameList = []
+
 def displaymenu():
   print(' ')
   print('1. Add name')
@@ -12,6 +14,21 @@ def displaymenu():
     print(' ')
   return(Choice)
 
+def AddName():
+  print(' ')
+  name = input('Enter a name to add')
+  if len(NameList) > 10:
+    print('Sorry the list is full')
+  else:
+    NameList.append(name)
+
+def DisplayList():
+  print(' ')
+  print(NameList)
 
 
 choice = displaymenu()
+if choice == 1:
+  AddName()
+elif choice == 2:
+  DisplayList()
