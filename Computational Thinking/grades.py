@@ -1,5 +1,15 @@
-studentMarks = 'bob', 75, 'garry', 59, 'dave', 87, 'trevor', '72'
-grades = {80:'A*',70:'A',60:'B',50:'C'}
+student_marks = 'alex', 80, 'bob', 65, 'cook', 90
+grade_boundaries = {'A': 90, 'B': 80, 'C': 60}
+result = []
 
-def Grades():
-  
+for index in range(len(student_marks)):
+    if index % 2 == 0:
+        result.append(student_marks[index])
+    else:
+        for grade in grade_boundaries.keys():
+            if student_marks[index] >= grade_boundaries[grade]:
+                result.append(grade)
+                break
+              
+result = tuple(result)
+print(result)
