@@ -126,6 +126,7 @@ class Snow(pygame.sprite.Sprite):
     if self.rect.y > 440:
       all_sprites_group.remove(self)
       snow_group.remove(self)
+      self.kill()
 
 
 all_sprites_group = pygame.sprite.Group() 
