@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+    <style>
+     .emeregency {background-color: yellow; color: red;}
+     .borders {border-style: double; border-width: 3px; border-color: black;}
+    </style>
+
+    <title> Lazar's web page </title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <!--There is no html neck-->  
+  <body>
+    <h1 class="borders">Lazar Djukovic</h1>
+    <br>
+    <img src="pfp.jpg" alt="No image found" height="200">
+    <h2 class="borders"> About me </h2>
+
+    <p>I am i year 13 student at Dulwich college. I am interested in studying computer science</p>
+    <p>My home country is Montenegro. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos praesentium tenetur, sequi error possimus blanditiis quas autem numquam tempore accusantium ullam ea totam nobis laboriosam at architecto hic harum? Quod!</p>
+
+    <h3 class="borders">My A-levels</h3>
+
+    <ul>
+      <li><a href="https://www.ocr.org.uk/qualifications/as-and-a-level/computer-science-h046-h446-from-2015/">OCR Computer Science</a></li>
+      <li><a href="https://www.ocr.org.uk/qualifications/as-and-a-level/mathematics-a-h230-h240-from-2017/">OCR Mathematics</a> </li>
+      <li><a href="https://www.aqa.org.uk/subjects/economics/as-and-a-level/economics-7135-7136">AQA Economics</a> </li>
+    </ul>
+
+    <h3 class="emeregency borders">My 5 favourite foods</h3>
+    <ol>
+      <li>Pasta</li>
+      <li>Chicken burger</li>
+      <li>Pizza</li>
+      <li>Mac and cheese</li>
+      <li>Noodles</li>
+    </ol>
+
+    <form name="testForm" onsubmit="return CalcAgeInMonths()" class="borders">
+      Enter Age: <br>
+      Years <input type="text" name="years"> <br>
+      Months <input type="text" name="months"> <br>
+      <p id="Answer">Answer is:</p> <br>
+      <input type="submit" value="Submit"> 
+    </form>
+
+    <br>
+    <br>
+
+    <form name="tableForm" onsubmit="return timesTable()" class="borders">
+      Times table: <br>
+      Number <input type="text" name="number"> <br>
+      Rows <input type="text" name="rows"> <br>
+      <p id="TableAnswer">Answer is:</p> <br>
+      <input type="submit" value="Submit"> 
+    </form>
+
+  </body>
+
+  <script>
+    function CalcAgeInMonths() {
+      years = parseInt(document.forms["testForm"]["years"].value);
+      months = parseInt(document.forms["testForm"]["months"].value);
+      totalMonths = years * 12 + months;
+      //alert('Age in months is ' + totalMonths)
+      ansElement = document.getElementById('Answer');
+      ansElement.innerHTML = 'Answer is: ' + totalMonths + ' months.';
+      return false
+    }
+
+    function timesTable() {
+      output = '';
+      num = parseInt(document.forms["tableForm"]["rows"].value);
+      table = parseInt(document.forms["tableForm"]["number"].value);
+      
+      var i = 1;
+      while (i <= num) {
+        var result = i * table;
+        output += i + ' times ' + table + ' = ' + result + '<br>';
+        i = i + 1;
+      }
+  
+      answerElement = document.getElementById('TableAnswer');
+      answerElement.innerHTML = output;
+  
+      return false;
+  }
+  </script>
+
+</html>

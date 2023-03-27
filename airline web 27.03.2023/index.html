@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <title>Seat Reservation Form</title>
+  </head>
+  <body>
+    <h1>Seat Reservation Form</h1>
+    <form name="test" action="./airline.html" onsubmit="return frmValidate()">
+      Row Number 1-9:
+      <input type="text" name="number" ><br>
+      
+      Seat Letter A-F:
+      <input type="text" name="letter" ><br><br>
+
+      <p style ="color: red;" id="number-error"></p>
+
+      <input type="submit" value="Submit">
+
+    </form>
+  </body>
+
+  <script>
+    function frmValidate() {
+      var rowNumber = document.forms["test"]["number"].value;
+      var seatLetter = document.forms["test"]["letter"].value;
+        
+
+      if (rowNumber > 1 && rowNumber < 9) {
+        return true;
+      } 
+
+      if (seatLetter > "A" && seatLetter < "F") {
+        return true;
+      }
+      
+      document.getElementById("number-error").innerHTML = "Row number must be 1-9 and seat letter A-F.";
+      return false;
+    }
+  </script>
+
+</html>
